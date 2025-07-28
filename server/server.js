@@ -16,6 +16,8 @@ mongoose
 
 // Use Routes
 app.use("/api/auth", authRoutes);
+const notesRoutes = require("./routes/notesRoutes");
+app.use("/api/notes", notesRoutes); // now /api/notes/dashboard is protected
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

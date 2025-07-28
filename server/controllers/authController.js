@@ -81,3 +81,58 @@ exports.verifyOtp = async (req, res) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 };
+
+const bcrypt = require("bcrypt");
+
+exports.createPassword = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user || !user.isVerified) {
+      return res.status(400).json({ message: "Email not verified" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    user.password = hashedPassword;
+
+    await user.save();
+
+    res.status(200).json({ message: "Password created successfully" });
+  } catch (error) {
+    console.error("Create password error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+//login
+
+const jwt = require("jsonwebtoken"); // make sure this is there too
+
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user || !user.password) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password); // ✅ Compare hash
+
+    if (!isMatch) {
+      return res.status(400).json({ message: "Incorrect password" });
+    }
+
+    const token = jwt.sign(
+      { userId: user._id, email: user.email },
+      process.env.JWT_SECRET
+    );
+
+    res.status(200).json({ token, message: "Login successful" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
+  }
+};
