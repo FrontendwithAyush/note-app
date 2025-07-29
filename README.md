@@ -16,9 +16,9 @@
 
 ### 📱 Mobile View
   <div align="center">
-<img src="./screenshot/img4.png" width="200" />
-<img src="./screenshot/img5.png" width="200" />
-<img src="./screenshot/img6.png" width="200" />
+<img src="./screenshot/img4.jpg" width="200" />
+<img src="./screenshot/img5.jpg" width="200" />
+<img src="./screenshot/img6.jpg" width="200" />
 </div>
 
 
