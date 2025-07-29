@@ -54,8 +54,8 @@
 
 ## 📂 Folder Structure
 
-
-NoteKeeper/
+```bash
+note-app/
 │
 ├── client/        # React frontend
 │   └── src/
@@ -68,7 +68,7 @@ NoteKeeper/
 │   └── controllers/
 │   └── models/
 │   └── server.js
-
+```
 ---
 
 🔧 Local Development Setup
