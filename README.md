@@ -79,16 +79,20 @@ NoteKeeper/
 git clone https://github.com/FrontendwithAyush/note-app.git
 ```
 
----
+### 2. Setup Backend
 
-2. Install dependencies
-   # Install server dependencies
+```bash
 cd server
 npm install
+```
 
-# Install client dependencies
-cd ../client
+### 3. Setup Frontend
+
+```bash
+cd client
 npm install
+npm start
+```
 
 ---
 
@@ -104,18 +108,6 @@ JWT_SECRET=your_secret
 EMAIL_USER=your_email
 EMAIL_PASS=your_email_password  
 
----
-
-4. Run Locally
-Copy
-Edit
-# Start backend
-cd server
-npm start
-
-# Start frontend
-cd ../client
-npm start
 
  ---
 
