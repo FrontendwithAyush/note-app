@@ -1,34 +1,3 @@
-// import React from "react";
-// import image from "../components/image.png";
-
-// const Signin = () => {
-//   return (
-//     <>
-//       <div className="container d-flex" id="signUp-main">
-//         <div
-//           className="d-flex align-items-center justify-content-center"
-//           id="signUp-left"
-//         >
-//           a
-//         </div>
-//         <div
-//           className="d-flex align-items-center justify-content-center"
-//           id="signUp-right"
-//         >
-//           <img
-//             src={image}
-//             alt="signupImage"
-//             id="signUp-image"
-//             style={{ borderRadius: "1rem" }}
-//           />
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Signin;
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -71,7 +40,7 @@ const Signin = () => {
           className="d-flex flex-column align-items-center justify-content-center"
           id="signUp-left"
         >
-          <h3 className="mb-4">Login to your account</h3>
+          <h3 className="mb-4 align-self-start">Login to your account</h3>
           <form onSubmit={handleLogin} style={{ width: "100%" }}>
             <div className="mb-3">
               <input
@@ -108,7 +77,7 @@ const Signin = () => {
 
           {/* Signup redirect option */}
           <p className="mt-3">
-            Don't have an account?{" "}
+            Need an account ?{" "}
             <span
               onClick={() => navigate("/")}
               style={{
@@ -117,7 +86,7 @@ const Signin = () => {
                 textDecoration: "underline",
               }}
             >
-              Sign up
+              Create one
             </span>
           </p>
         </div>

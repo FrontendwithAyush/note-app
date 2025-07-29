@@ -6,7 +6,6 @@ import image from "../components/image.png";
 const Signup = () => {
   const navigate = useNavigate();
 
-  // Step states
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
@@ -21,7 +20,7 @@ const Signup = () => {
       const res = await axios.post("http://localhost:5000/api/auth/send-otp", {
         email,
       });
-      setOtp(res.data.otp); // Store OTP from backend (for testing)
+      setOtp(res.data.otp);
       setStep(2);
     } catch (err) {
       setError("Failed to send OTP");
@@ -40,7 +39,7 @@ const Signup = () => {
       );
 
       if (res.data.message === "Email verified successfully") {
-        setStep(3); // move to set password step
+        setStep(3);
         setError("");
       } else {
         setError("Invalid OTP");
@@ -69,7 +68,7 @@ const Signup = () => {
     }
   };
   const handleSignInClick = () => {
-    navigate("/signin"); // assumes you have /signin route setup
+    navigate("/signin");
   };
 
   return (
