@@ -121,6 +121,7 @@ EMAIL_PASS=your_email_password
 ---
 
 ✨ Deployment
+
 Frontend: Deployed on Netlify
 
 Backend: Deployed on Render
