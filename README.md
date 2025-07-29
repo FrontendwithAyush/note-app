@@ -94,20 +94,13 @@ npm install
 npm start
 ```
 
----
-
-3. Setup Environment Variables
-Create .env file inside /server:
-
-env
-Copy
-Edit
+```env
 PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
 EMAIL_USER=your_email
 EMAIL_PASS=your_email_password  
-
+```
 
  ---
 
