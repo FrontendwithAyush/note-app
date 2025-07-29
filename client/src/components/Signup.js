@@ -17,9 +17,12 @@ const Signup = () => {
   // 1. Send OTP to email
   const sendOtp = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/send-otp", {
-        email,
-      });
+      const res = await axios.post(
+        "https://note-backend-gdum.onrender.com/api/auth/send-otp",
+        {
+          email,
+        }
+      );
       setOtp(res.data.otp);
       setStep(2);
     } catch (err) {
@@ -31,7 +34,7 @@ const Signup = () => {
   const verifyOtp = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://note-backend-gdum.onrender.com/api/auth/verify-otp",
         {
           email,
           otp: enteredOtp,
@@ -57,10 +60,13 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/auth/create-password", {
-        email,
-        password,
-      });
+      await axios.post(
+        "https://note-backend-gdum.onrender.com/api/auth/create-password",
+        {
+          email,
+          password,
+        }
+      );
 
       navigate("/signin"); // Redirect after signup
     } catch (err) {

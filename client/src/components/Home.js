@@ -17,7 +17,7 @@ const Home = () => {
 
     // Fetch user data from dashboard route
     axios
-      .get("http://localhost:5000/api/notes/dashboard", {
+      .get("https://note-backend-gdum.onrender.com/api/notes/dashboard", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +44,7 @@ const Home = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/notes/add",
+        "https://note-backend-gdum.onrender.com/api/notes/add",
         {
           description, // or use variable: description
         },
@@ -73,11 +73,14 @@ const Home = () => {
   const fetchNotes = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/notes/fetch", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.get(
+        "https://note-backend-gdum.onrender.com/api/notes/fetch",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (res.status === 200) {
         setNotes(res.data.notes);
@@ -91,11 +94,14 @@ const Home = () => {
   const handleDelete = async (noteId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/notes/delete/${noteId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://note-backend-gdum.onrender.com/api/notes/delete/${noteId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       // Remove the note from state without re-fetching
       setNotes((prevNotes) => prevNotes.filter((note) => note._id !== noteId));
