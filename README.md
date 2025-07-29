@@ -8,12 +8,20 @@
 ## 📱 Screenshots
 
 ### 💻 Desktop View
-![Desktop Screenshot](./assets/desktop-screenshot.png)
+  <div align="center">
+<img src="./screenshot/img1.png" width="200" />
+<img src="./screenshot/img2.png" width="200" />
+<img src="./screenshot/img3.png" width="200" />
+</div>
 
 ### 📱 Mobile View
-![Mobile Screenshot](./assets/mobile-screenshot.png)
+  <div align="center">
+<img src="./screenshot/img4.png" width="200" />
+<img src="./screenshot/img5.png" width="200" />
+<img src="./screenshot/img6.png" width="200" />
+</div>
 
-> 📌 _**Upload your own screenshots** in the `/assets` folder and replace the file names above._
+
 
 ---
 
@@ -65,11 +73,10 @@ NoteKeeper/
 
 🔧 Local Development Setup
 1. Clone the repo
-bash
 Copy
 Edit
-git clone https://github.com/your-username/NoteKeeper.git
-cd NoteKeeper
+git clone https://github.com/FrontendwithAyush/note-app.git
+cd note-app
 
 ---
 
@@ -99,7 +106,6 @@ EMAIL_PASS=your_email_password
 ---
 
 4. Run Locally
-bash
 Copy
 Edit
 # Start backend
