@@ -72,11 +72,12 @@ NoteKeeper/
 ---
 
 🔧 Local Development Setup
-1. Clone the repo
-Copy
-Edit
+
+### 1. Clone Repositories
+
+```bash
 git clone https://github.com/FrontendwithAyush/note-app.git
-cd note-app
+```
 
 ---
 
